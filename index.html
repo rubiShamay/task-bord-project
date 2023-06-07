@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Notepad</title>
+    <!-- title icon -->
+    <link rel="icon" type="image/icon" href="assets/images/icon.png" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- bootstrap icon's -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <!-- my css style -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- my JavaScript -->
+    <script defer src="javaScript.js"></script>
+</head>
+
+<body onload="startTime()">
+    <section>
+        <!-- header -->
+        <header>
+            <!-- google object -->
+            <div class="google">
+                <form target="self" action="https://www.google.com/search?q">
+                    <dt>
+                        <span>need's somethink ?</span> <button type="submit"></button>
+                    </dt>
+                    <input placeholder="ask gooole :" required name="q" type="text" />
+                </form>
+            </div>
+            <!-- title -->
+            <div class="headDiv">
+                <h1>hi and welcome to your notepad</h1>
+                <!-- clock -->
+                <div id="clock">
+                    <div id="txt"></div>
+                </div>
+            </div>
+        </header>
+
+        <div>
+            <!-- navber -->
+            <nav>
+                <!-- radio -->
+                <div>
+                    <p>want Radio <i class="bi bi-music-player"></i> ? :</p>
+                    <audio controls>
+                        <source src="http://glzwizzlv.bynetcdn.com/glglz_mp3?awCollectionId=misc&awEpisodeId=glglz" />
+                    </audio>
+                </div>
+                <!-- button of change background -->
+                <div class="Change">
+                    <p>change your background</p>
+                    <div>
+                        <button class="changeBtn btn btn-outline-dark" onclick="changeToLake()">
+                            Lake
+                        </button>
+                        <button class="changeBtn btn btn-outline-dark" onclick="changeToWolf()">
+                            Wolf
+                        </button>
+                        <button class="changeBtn btn btn-outline-dark" onclick="changeToGrass()">
+                            Grass
+                        </button>
+                        <button class="changeBtn btn btn-outline-dark" onclick="changeToSky()">
+                            Sky
+                        </button>
+                        <button class="changeBtn btn btn-outline-dark" onclick="changeToMountains()">
+                            Mount
+                        </button>
+                        <button class="changeBtn btn btn-outline-dark" onclick="changeToOcean()">
+                            Ocean
+                        </button>
+                    </div>
+                </div>
+                <!-- weather -->
+                <a class="weatherwidget-io" href="https://forecast7.com/he/32d0934d78/tel-aviv-yafo/"
+                    data-label_1="תל אביב" data-label_2="מזג-האויר" data-icons="Climacons Animated" data-days="7"
+                    data-theme="random_grey">תל אביב מזג-האויר
+                </a>
+            </nav>
+
+            <!-- main -->
+            <main id="main">
+                <!-- notes -->
+                <div class="divForm" >
+                    <form onsubmit="addNote()" id="noteForm">
+                        <label>Add Note</label>
+                        <textarea class="form-control" id="textBox" cols="30" rows="10" required
+                            minlength="2" value=""></textarea>
+                        <div class="inputAndButton">
+                            <label>Select Time</label>
+                            <input type="time" id="inputTime" required>
+                            <label>Select Date</label>
+                            <input type="date" id="inputDate" required>
+                            <button type="submit" class="btn btn-success">add</button>
+                            <button type="reset" class="btn btn-secondary">clear</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="divContainer">
+                </div>
+            </main>
+
+            <!-- aside -->
+            <aside>
+                <!-- paragraph for the user -->
+                <p>
+                    Hi , <br />
+                    We are very happy to see you with us... <br />
+                    You are welcome to prepare the notebook for yourself, We are here to
+                    remind and not to forget.. <br />
+                </p>
+                <!-- aside buttons -->
+                <div class="ourBtn">
+                    <div>
+                        <p>Clean</p>
+                        <button onclick="deleteArr()" class="btnClean">
+                            <i class="bi bi-eraser-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- footer all rights -->
+        <footer>
+            <p>All rights reserved to Reuven Shamay ©</p>
+        </footer>
+    </section>
+</body>
+
+</html>
